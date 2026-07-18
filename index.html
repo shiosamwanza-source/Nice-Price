@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NICE PRICE - Premium Kids Fashion 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lux-navy: #0a0e21;
+            --royal-gold: #ffd700;
+            --electric-blue: #00f3ff;
+            --soft-pink: #ff007a;
+            --aurora-1: #ff0099;
+            --aurora-2: #493eff;
+            --aurora-3: #00f3ff;
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8f9fc;
+            color: #0a0e21;
+            overflow-x: hidden;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        h1, h2, h3, h4, .font-sora { font-family: 'Sora', sans-serif; }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: var(--lux-navy);
+            color: #ffffff;
+        }
+        .dark-mode .glass-card { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.1); color: white; }
+        .dark-mode .neu-card { background: #12162e; box-shadow: 8px 8px 16px #06080f, -8px -8px 16px #161a3d; }
+
+        /* Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        /* Neumorphism */
+        .neu-card {
+            background: #e6e9f0;
+            box-shadow: 10px 10px 20px #d1d4dc, -10px -10px 20px #ffffff;
+        }
+        .dark-mode .neu-card { background: #12162e; box-shadow: 10px 10px 20px #06080f, -10px -10px 20px #161a3d; }
+
+        /* Aurora Background */
+        .aurora-bg {
+            background: linear-gradient(270deg, var(--aurora-1), var(--aurora-2), var(--aurora-3));
+            background-size: 400% 400%;
+            animation: auroraMove 10s ease infinite;
+        }
+        @keyframes auroraMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Shapes & Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.5;
+            z-index: 0;
+            animation: floatOrb 8s ease-in-out infinite;
+        }
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.1); }
+        }
+
+        /* 3D Floating Card Animation */
+        .product-card {
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s;
+            transform-style: preserve-3d;
+        }
+        .product-card:hover {
+            transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 40px 70px rgba(0,0,0,0.15);
+        }
+
+        /* Glow Text & Buttons */
+        .glow-text { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px var(--electric-blue); }
+        .btn-glow {
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.2);
+            transition: all 0.3s;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.4);
+            transform: scale(1.05);
+        }
+
+        /* Mega Menu & Dropdowns */
+        .dropdown { opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s; }
+        .has-dropdown:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        /* Scrolling Marquee */
+        .marquee { display: flex; overflow: hidden; user-select: none; gap: 3rem; }
+        .marquee-content { flex-shrink: 0; display: flex; gap: 3rem; animation: scroll 20s linear infinite; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+
+        /* Reveal on Scroll */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(var(--aurora-1), var(--aurora-2)); border-radius: 10px; }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- =================== PREMIUM NAVIGATION =================== -->
+    <header class="fixed top-0 w-full z-50 glass-card !bg-white/40 dark-mode:!bg-[#0a0e21]/40 border-b border-white/20">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="relative">
+                    <img src="https://z-cdn-media.chatglm.cn/files/9c10819e-a94c-4c69-8c4a-42da879c991b.png?auth_key=1884401220-d151c3a8f6254c2bbee6a4f8b849e827-0-b3d6279c2290847dc62891564e190145" alt="NICE PRICE" class="h-12 w-auto rounded-full shadow-lg group-hover:rotate-12 transition-transform duration-500">
+                    <span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></span>
+                    <span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
+                </div>
+                <div class="hidden md:block">
+                    <h1 class="font-sora text-xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-indigo-600">NICE PRICE</h1>
+                    <p class="text-[10px] uppercase tracking-[0.2em] text-gray-500 dark:text-gray-300">Premium Kids Fashion</p>
+                </div>
+            </a>
+
+            <!-- Menu -->
+            <ul class="hidden lg:flex items-center space-x-8 font-medium text-sm">
+                <li class="has-dropdown relative cursor-pointer py-2">
+                    <span class="hover:text-pink-500 transition flex items-center">Makundi <i class="fas fa-chevron-down ml-1 text-xs"></i></span>
+                    <!-- Mega Menu -->
+                    <div class="dropdown absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[600px] glass-card rounded-3xl p-6 grid grid-cols-3 gap-4">
+                        <a href="#girls" class="hover:bg-pink-100 p-3 rounded-xl transition">
+                            <i class="fas fa-venus text-pink-500 text-xl mb-2"></i>
+                            <h4 class="font-bold">Watoto wa Kike</h4>
+                            <p class="text-xs text-gray-500">Mitindo ya kisasa</p>
+                        </a>
+                        <a href="#boys" class="hover:bg-blue-100 p-3 rounded-xl transition">
+                            <i class="fas fa-mars text-blue-500 text-xl mb-2"></i>
+                            <h4 class="font-bold">Watoto wa Kiume</h4>
+                            <p class="text-xs text-gray-500">Nguo za kifahari</p>
+                        </a>
+                        <a href="#shoes" class="hover:bg-orange-100 p-3 rounded-xl transition">
+                            <i class="fas fa-shoe-prints text-orange-500 text-xl mb-2"></i>
+                            <h4 class="font-bold">Viatu</h4>
+                            <p class="text-xs text-gray-500">Kwa kila hatua</p>
+                        </a>
+                        <a href="#baby" class="hover:bg-green-100 p-3 rounded-xl transition">
+                            <i class="fas fa-baby text-green-500 text-xl mb-2"></i>
+                            <h4 class="font-bold">Watoto Wachanga</h4>
+                            <p class="text-xs text-gray-500">Ukamilishi wa mahitaji</p>
+                        </a>
+                        <a href="#teen" class="hover:bg-purple-100 p-3 rounded-xl transition">
+                            <i class="fas fa-user-astronaut text-purple-500 text-xl mb-2"></i>
+                            <h4 class="font-bold">Vijana (Teens)</h4>
+                            <p class="text-xs text-gray-500">Mtindo wa 2026</p>
+                        </a>
+                        <a href="#eid" class="hover:bg-yellow-100 p-3 rounded-xl transition">
+                            <i class="fas fa-star text-yellow-500 text-xl mb-2"></i>
+                            <h4 class="font-bold">Nguo za Idd</h4>
+                            <p class="text-xs text-gray-500">Kifahari na cha kisasa</p>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="#trending" class="hover:text-pink-500 transition">Trending</a></li>
+                <li><a href="#sale" class="hover:text-pink-500 transition flex items-center">Flash Sale <span class="ml-2 bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full animate-bounce">HOT</span></a></li>
+                <li><a href="#location" class="hover:text-pink-500 transition">Muonekano</a></li>
+            </ul>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:flex w-10 h-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition"><i class="fas fa-search"></i></button>
+                <button class="hidden md:flex w-10 h-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition relative">
+                    <i class="fas fa-heart"></i>
+                    <span class="absolute -top-1 -right-1 bg-pink-500 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">3</span>
+                </button>
+                <button class="hidden md:flex w-10 h-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition relative">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="absolute -top-1 -right-1 bg-indigo-500 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">2</span>
+                </button>
+                <button id="darkToggle" class="w-10 h-10 flex items-center justify-center rounded-full neu-card transition">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="https://wa.me/255657646422" class="bg-gradient-to-r from-green-400 to-emerald-500 text-white px-5 py-2.5 rounded-full text-sm font-bold hidden md:flex items-center space-x-2 btn-glow">
+                    <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- =================== HERO SECTION (2026 FUTURE UI) =================== -->
+    <section id="home" class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden aurora-bg">
+        <!-- Floating Orbs -->
+        <div class="orb w-96 h-96 bg-pink-500 top-20 -left-20"></div>
+        <div class="orb w-96 h-96 bg-blue-500 bottom-10 right-10" style="animation-delay: 2s;"></div>
+        <div class="orb w-72 h-72 bg-yellow-400 top-1/2 left-1/2" style="animation-delay: 4s;"></div>
+
+        <div class="container mx-auto px-6 z-10 relative">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-white text-center lg:text-left reveal active">
+                    <span class="inline-block glass-card !bg-white/20 text-white px-5 py-2 rounded-full text-sm font-semibold mb-6 border border-white/30">
+                        ✨ New Collection 2026 In Store
+                    </span>
+                    <h1 class="font-sora text-5xl md:text-7xl lg:text-8xl font-extrabold leading-none tracking-tighter glow-text mb-4">
+                        NICE PRICE
+                    </h1>
+                    <h2 class="font-sora text-2xl md:text-4xl font-bold text-yellow-300 mb-6 tracking-wide">
+                        Premium Kids Fashion
+                    </h2>
+                    <p class="text-xl md:text-2xl font-light mb-4 text-white/90">
+                        Ubora. Mtindo. Bei Rafiki.
+                    </p>
+                    <p class="max-w-lg mx-auto lg:mx-0 text-white/80 mb-10 text-lg">
+                        "Tunawavisha watoto kwa ubora wa kimataifa kwa bei ambayo kila mzazi anaweza kumudu."
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#trending" class="bg-white text-indigo-900 px-10 py-4 rounded-full font-bold text-lg btn-glow flex items-center justify-center space-x-3">
+                            <i class="fas fa-shopping-cart"></i> <span>Shop Now</span>
+                        </a>
+                        <a href="#new" class="glass-card !bg-white/10 text-white border border-white/40 px-10 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition flex items-center justify-center space-x-3">
+                            <i class="fas fa-sparkles"></i> <span>New Collection</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Visual (3D Floating Frame) -->
+                <div class="relative hidden lg:block reveal active" style="animation-delay: 0.5s;">
+                    <div class="relative w-full h-[600px]">
+                        <!-- Main Image Card -->
+                        <div class="absolute top-0 right-0 w-[450px] h-[550px] rounded-[4rem] overflow-hidden shadow-2xl border-8 border-white/30 transform rotate-3 hover:rotate-0 transition-transform duration-700">
+                            <img src="https://z-cdn-media.chatglm.cn/files/9c10819e-a94c-4c69-8c4a-42da879c991b.png?auth_key=1884401220-d151c3a8f6254c2bbee6a4f8b849e827-0-b3d6279c2290847dc62891564e190145" alt="Kids Fashion" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Floating Glass Review Card -->
+                        <div class="absolute bottom-10 left-0 glass-card !bg-white/90 p-5 rounded-2xl shadow-xl flex items-center space-x-4 transform -rotate-6 hover:rotate-0 transition-transform duration-500 w-64">
+                            <img src="https://i.pravatar.cc/100?img=5" class="w-12 h-12 rounded-full border-2 border-pink-500" alt="Customer">
+                            <div>
+                                <div class="flex text-yellow-400 text-xs mb-1">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-xs text-gray-700 font-medium">"Nguo bora sana, mtoto wangu anapenda sana!"</p>
+                                <p class="text-xs text-gray-500 mt-1">- Mama Aisha</p>
+                            </div>
+                        </div>
+                        <!-- Floating Glass Badge -->
+                        <div class="absolute top-10 left-10 glass-card !bg-yellow-300/90 p-4 rounded-full shadow-xl transform rotate-12 hover:scale-110 transition-transform duration-500">
+                            <div class="text-center">
+                                <p class="font-sora font-extrabold text-2xl text-indigo-900">50%</p>
+                                <p class="text-[10px] font-bold text-indigo-900 uppercase">Off Sale</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- =================== TRUST MARQUEE =================== -->
+    <div class="bg-indigo-900 py-4 overflow-hidden">
+        <div class="marquee">
+            <div class="marquee-content text-white font-bold text-lg uppercase tracking-wider">
+                <span><i class="fas fa-truck-fast mr-2 text-yellow-400"></i> Fast Delivery</span>
+                <span><i class="fas fa-shield-halved mr-2 text-green-400"></i> Secure Shopping</span>
+                <span><i class="fas fa-rotate-left mr-2 text-pink-400"></i> Easy Returns</span>
+                <span><i class="fas fa-crown mr-2 text-yellow-400"></i> Premium Quality</span>
+                <span><i class="fas fa-tags mr-2 text-blue-400"></i> Affordable Prices</span>
+                <span><i class="fas fa-headset mr-2 text-purple-400"></i> 24/7 Support</span>
+                <!-- Repeat for seamless loop -->
+                <span><i class="fas fa-truck-fast mr-2 text-yellow-400"></i> Fast Delivery</span>
+                <span><i class="fas fa-shield-halved mr-2 text-green-400"></i> Secure Shopping</span>
+                <span><i class="fas fa-rotate-left mr-2 text-pink-400"></i> Easy Returns</span>
+                <span><i class="fas fa-crown mr-2 text-yellow-400"></i> Premium Quality</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== CATEGORIES GRID =================== -->
+    <section id="new" class="py-20 bg-gray-50 dark-mode:bg-[#0a0e21] transition-colors duration-300">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-sm font-bold text-pink-500 uppercase tracking-widest">Shop By Category</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold mt-2">Vituo vya Bidhaa (Categories)</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Cat 1 -->
+                <div class="reveal group cursor-pointer">
+                    <div class="neu-card rounded-3xl p-6 flex flex-col items-center justify-center h-48 group-hover:bg-pink-500 transition-colors duration-300">
+                        <i class="fas fa-venus text-4xl text-pink-500 group-hover:text-white mb-3 transition-colors"></i>
+                        <h4 class="font-bold text-gray-800 dark-mode:text-white group-hover:text-white transition-colors">Watoto wa Kike</h4>
+                    </div>
+                </div>
+                <!-- Cat 2 -->
+                <div class="reveal group cursor-pointer" style="transition-delay: 0.1s;">
+                    <div class="neu-card rounded-3xl p-6 flex flex-col items-center justify-center h-48 group-hover:bg-blue-500 transition-colors duration-300">
+                        <i class="fas fa-mars text-4xl text-blue-500 group-hover:text-white mb-3 transition-colors"></i>
+                        <h4 class="font-bold text-gray-800 dark-mode:text-white group-hover:text-white transition-colors">Watoto wa Kiume</h4>
+                    </div>
+                </div>
+                <!-- Cat 3 -->
+                <div class="reveal group cursor-pointer" style="transition-delay: 0.2s;">
+                    <div class="neu-card rounded-3xl p-6 flex flex-col items-center justify-center h-48 group-hover:bg-orange-500 transition-colors duration-300">
+                        <i class="fas fa-shoe-prints text-4xl text-orange-500 group-hover:text-white mb-3 transition-colors"></i>
+                        <h4 class="font-bold text-gray-800 dark-mode:text-white group-hover:text-white transition-colors">Viatu</h4>
+                    </div>
+                </div>
+                <!-- Cat 4 -->
+                <div class="reveal group cursor-pointer" style="transition-delay: 0.3s;">
+                    <div class="neu-card rounded-3xl p-6 flex flex-col items-center justify-center h-48 group-hover:bg-green-500 transition-colors duration-300">
+                        <i class="fas fa-baby text-4xl text-green-500 group-hover:text-white mb-3 transition-colors"></i>
+                        <h4 class="font-bold text-gray-800 dark-mode:text-white group-hover:text-white transition-colors">Watoto Wachanga</h4>
+                    </div>
+                </div>
+                <!-- Cat 5 -->
+                <div class="reveal group cursor-pointer" style="transition-delay: 0.4s;">
+                    <div class="neu-card rounded-3xl p-6 flex flex-col items-center justify-center h-48 group-hover:bg-purple-500 transition-colors duration-300">
+                        <i class="fas fa-user-astronaut text-4xl text-purple-500 group-hover:text-white mb-3 transition-colors"></i>
+                        <h4 class="font-bold text-gray-800 dark-mode:text-white group-hover:text-white transition-colors">Vijana (Teens)</h4>
+                    </div>
+                </div>
+                <!-- Cat 6 -->
+                <div class="reveal group cursor-pointer" style="transition-delay: 0.5s;">
+                    <div class="neu-card rounded-3xl p-6 flex flex-col items-center justify-center h-48 group-hover:bg-yellow-500 transition-colors duration-300">
+                        <i class="fas fa-gem text-4xl text-yellow-500 group-hover:text-white mb-3 transition-colors"></i>
+                        <h4 class="font-bold text-gray-800 dark-mode:text-white group-hover:text-white transition-colors">Vipodozi</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== TRENDING PRODUCTS =================== -->
+    <section id="trending" class="py-20 bg-white dark-mode:bg-[#0d1130] transition-colors duration-300 relative overflow-hidden">
+        <!-- Background Decor -->
+        <div class="absolute top-20 right-0 w-96 h-96 bg-pink-200 rounded-full filter blur-3xl opacity-30"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12 reveal">
+                <div>
+                    <span class="text-sm font-bold text-indigo-500 uppercase tracking-widest">🔥 Trending Now</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mt-2">Bidhaa zinazovuma zaidi</h2>
+                </div>
+                <a href="#" class="mt-4 md:mt-0 text-indigo-600 font-bold hover:underline flex items-center">
+                    Angalia Zote <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Product 1 -->
+                <div class="product-card glass-card rounded-3xl overflow-hidden cursor-pointer reveal">
+                    <div class="relative h-72 overflow-hidden bg-gray-100">
+                        <img src="https://z-cdn-media.chatglm.cn/files/fbb5fc3d-9dae-4c3f-9596-92f783f6277f.jpg?auth_key=1884400558-e843411dccc04102b21c89eb3a72750d-0-2f4fb78a778d291091896e843ce7e60e" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" alt="LED Shoes">
+                        <!-- Badges -->
+                        <div class="absolute top-4 left-4 flex flex-col space-y-2">
+                            <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">-20% SALE</span>
+                            <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg flex items-center"><i class="fas fa-fire mr-1"></i> TRENDING</span>
+                        </div>
+                        <!-- Quick Actions -->
+                        <div class="absolute top-4 right-4 flex flex-col space-y-2">
+                            <button class="w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-700 hover:bg-pink-500 hover:text-white transition shadow-md"><i class="fas fa-heart"></i></button>
+                            <button class="w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-700 hover:bg-blue-500 hover:text-white transition shadow-md"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-bold text-lg">Viatu vya LED</h3>
+                                <p class="text-sm text-gray-500 dark-mode:text-gray-400">Kids Sneakers</p>
+                            </div>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mt-4">
+                            <div>
+                                <span class="text-xl font-extrabold text-pink-500">TZS 35,000</span>
+                                <span class="ml-2 text-sm text-gray-400 line-through">TZS 45,000</span>
+                            </div>
+                            <button class="bg-indigo-600 text-white w-10 h-10 rounded-xl flex items-center justify-center hover:bg-indigo-700 transition shadow-lg hover:scale-110">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <!-- Stock Indicator -->
+                        <div class="mt-4 w-full bg-gray-200 rounded-full h-1.5 dark-mode:bg-gray-700">
+                            <div class="bg-pink-500 h-1.5 rounded-full" style="width: 80%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Mabaki yamebaki: 4 tu!</p>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card glass-card rounded-3xl overflow-hidden cursor-pointer reveal" style="transition-delay: 0.1s;">
+                    <div class="relative h-72 overflow-hidden bg-gray-100">
+                        <img src="https://z-cdn-media.chatglm.cn/files/5850eebf-7f1f-4515-a73d-00ed018c7a36.jpg?auth_key=1884400558-d0ab75f0cbd841d09eb3103057245b55-0-2c4a0d5e76623c9ec3c3bddd4c75f449" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" alt="Fashion Dress">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">NEW</span>
+                        </div>
+                        <div class="absolute top-4 right-4 flex flex-col space-y-2">
+                            <button class="w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-700 hover:bg-pink-500 hover:text-white transition shadow-md"><i class="fas fa-heart"></i></button>
+                            <button class="w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-700 hover:bg-blue-500 hover:text-white transition shadow-md"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-bold text-lg">Mavazi ya Kifahari</h3>
+                                <p class="text-sm text-gray-500 dark-mode:text-gray-400">Teen Collection</p>
+                            </div>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mt-4">
+                            <div>
+                                <span class="text-xl font-extrabold text-pink-500">TZS 45,000</span>
+                            </div>
+                            <button class="bg-indigo-600 text-white w-10 h-10 rounded-xl flex items-center justify-center hover:bg-indigo-700 transition shadow-lg hover:scale-110">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card glass-card rounded-3xl overflow-hidden cursor-pointer reveal" style="transition-delay: 0.2s;">
+                    <div class="relative h-72 overflow-hidden bg-gray-100">
+                        <img src="https://z-cdn-media.chatglm.cn/files/5d3e628f-d2fa-4188-917b-0a319c03abf8.png?auth_key=1884400558-90b12af9feb54c46950d58467ef0c184-0-6e2409de3d25544bc732037f3071c2c3" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" alt="Hair Clips">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">EDITOR'S CHOICE</span>
+                        </div>
+                        <div class="absolute top-4 right-4 flex flex-col space-y-2">
+                            <button class="w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-700 hover:bg-pink-500 hover:text-white transition shadow-md"><i class="fas fa-heart"></i></button>
+                            <button class="w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-700 hover:bg-blue-500 hover:text-white transition shadow-md"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-bold text-lg">Vipodozi vya Nywele</h3>
+                                <p class="text-sm text-gray-500 dark-mode:text-gray-400">Princess Style</p>
+                            </div>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mt-4">
+                            <div>
+                                <span class="text-xl font-extrabold text-pink-500">TZS 15,000</span>
+                            </div>
+                            <button class="bg-indigo-600 text-white w-10 h-10 rounded-xl flex items-center justify-center hover:bg-indigo-700 transition shadow-lg hover:scale-110">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card glass-card rounded-3xl overflow-hidden cursor-pointer reveal" style="transition-delay: 0.3s;">
+                    <div class="relative h-72 overflow-hidden bg-gray-100">
+                        <img src="https://z-cdn-media.chatglm.cn/files/b47b9928-3c56-497f-88d0-b0e095bf0210.jpg?auth_key=1884400558-95847bdb43e2430dbc9f1b8cd009d90d-0-7ebfad025b17b06938813a5b44519544" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" alt="Accessories">
+                        <div class="absolute top-4 left-4 flex flex-col space-y-2">
+                            <span class="bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">LIMITED ED.</span>
+                        </div>
+                        <div class="absolute top-4 right-4 flex flex-col space-y-2">
+                            <button class="w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-700 hover:bg-pink-500 hover:text-white transition shadow-md"><i class="fas fa-heart"></i></button>
+                            <button class="w-10 h-10 bg-white/80 backdrop-blur rounded-full flex items-center justify-center text-gray-700 hover:bg-blue-500 hover:text-white transition shadow-md"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <h3 class="font-bold text-lg">Vipodozi vya Baharini</h3>
+                                <p class="text-sm text-gray-500 dark-mode:text-gray-400">Ocean Theme</p>
+                            </div>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mt-4">
+                            <div>
+                                <span class="text-xl font-extrabold text-pink-500">TZS 25,000</span>
+                            </div>
+                            <button class="bg-indigo-600 text-white w-10 h-10 rounded-xl flex items-center justify-center hover:bg-indigo-700 transition shadow-lg hover:scale-110">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== FLASH SALE COUNTDOWN =================== -->
+    <section id="sale" class="py-20 bg-gradient-to-br from-indigo-900 to-purple-900 text-white relative overflow-hidden">
+        <div class="orb w-96 h-96 bg-pink-500 -top-20 -left-20 opacity-30"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-center md:text-left reveal">
+                    <h2 class="text-4xl md:text-6xl font-extrabold mb-4 text-yellow-300">⚡ Flash Sale ⚡</h2>
+                    <p class="text-xl text-white/80 mb-2">Upunguzaji mkubwa wa bei kwa muda mfupi tu!</p>
+                    <p class="text-lg text-white/60">Fursa ya mwisho kuokoa hadi 50% kwa bidhaa bora.</p>
+                </div>
+                <!-- Countdown Timer -->
+                <div class="grid grid-cols-4 gap-4 reveal" style="transition-delay: 0.2s;">
+                    <div class="glass-card !bg-white/10 border border-white/20 p-4 rounded-2xl text-center min-w-[80px]">
+                        <div id="days" class="text-4xl font-extrabold text-white">04</div>
+                        <div class="text-xs uppercase text-white/70 mt-1">Siku</div>
+                    </div>
+                    <div class="glass-card !bg-white/10 border border-white/20 p-4 rounded-2xl text-center min-w-[80px]">
+                        <div id="hours" class="text-4xl font-extrabold text-white">12</div>
+                        <div class="text-xs uppercase text-white/70 mt-1">Saa</div>
+                    </div>
+                    <div class="glass-card !bg-white/10 border border-white/20 p-4 rounded-2xl text-center min-w-[80px]">
+                        <div id="minutes" class="text-4xl font-extrabold text-white">45</div>
+                        <div class="text-xs uppercase text-white/70 mt-1">Dakika</div>
+                    </div>
+                    <div class="glass-card !bg-white/10 border border-white/20 p-4 rounded-2xl text-center min-w-[80px]">
+                        <div id="seconds" class="text-4xl font-extrabold text-yellow-300">59</div>
+                        <div class="text-xs uppercase text-white/70 mt-1">Sekunde</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== TESTIMONIALS =================== -->
+    <section class="py-20 bg-gray-50 dark-mode:bg-[#0a0e21] transition-colors duration-300">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <span class="text-sm font-bold text-pink-500 uppercase tracking-widest">★★★★★ Reviews</span>
+                <h2 class="text-4xl md:text-5xl font-extrabold mt-2">Wazazi Wanachosema</h2>
+                <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Maelfu ya wateja walioridhika wanashuhudia ubora wetu. Jiunge na familia ya NICE PRICE leo.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="glass-card rounded-3xl p-8 reveal relative">
+                    <i class="fas fa-quote-left text-6xl absolute top-4 right-4 text-pink-100 dark-mode:text-white/5"></i>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://i.pravatar.cc/100?img=44" alt="Mama Aisha" class="w-16 h-16 rounded-full border-4 border-pink-500">
+                        <div>
+                            <h4 class="font-bold text-lg">Mama Aisha</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark-mode:text-gray-300 relative z-10">"Nimefurahishwa sana na ubora wa nguo. Mtoto wangu anapenda sana mitindo yao ya kisasa na anajisikia vizuri. Nitazidi kununua hapa!"</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="glass-card rounded-3xl p-8 reveal relative" style="transition-delay: 0.2s;">
+                    <i class="fas fa-quote-left text-6xl absolute top-4 right-4 text-blue-100 dark-mode:text-white/5"></i>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://i.pravatar.cc/100?img=12" alt="Baba Juma" class="w-16 h-16 rounded-full border-4 border-blue-500">
+                        <div>
+                            <h4 class="font-bold text-lg">Baba Juma</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark-mode:text-gray-300 relative z-10">"Bei ni rafiki sana ikilinganishwa na ubora unaopatikana. Viatu vya LED nilivyonunulia mtoto wangu vinafaa sana na vina mwanga mzuri. Asanteni NICE PRICE!"</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="glass-card rounded-3xl p-8 reveal relative" style="transition-delay: 0.4s;">
+                    <i class="fas fa-quote-left text-6xl absolute top-4 right-4 text-green-100 dark-mode:text-white/5"></i>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://i.pravatar.cc/100?img=32" alt="Mama Zawadi" class="w-16 h-16 rounded-full border-4 border-green-500">
+                        <div>
+                            <h4 class="font-bold text-lg">Mama Zawadi</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark-mode:text-gray-300 relative z-10">"Huduma ya haraka na ya kirafiki. Nilipata zawadi bora kwa mtoto wako wa vipodozi vya nywele. Ni nguo za kisasa zinazoendana na wakati. Tuko pamoja!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== LOCATION & CONTACT =================== -->
+    <section id="location" class="py-20 bg-white dark-mode:bg-[#0d1130] transition-colors duration-300">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Map -->
+                <div class="reveal">
+                    <div class="glass-card rounded-3xl overflow-hidden p-2 shadow-xl">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.727686376781!2d39.26480691477127!3d-6.81600399510436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c42627a5a8b9f%3A0x7c73e0e9e50e0f5b!2sAl%20Uruba%20Hotel!5e0!3m2!1sen!2stz!4v1620000000000" 
+                            width="100%" height="450" style="border:0; border-radius: 1.5rem;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+                <!-- Contact Info -->
+                <div class="reveal" style="transition-delay: 0.2s;">
+                    <span class="text-sm font-bold text-indigo-500 uppercase tracking-widest">📍 Visit Our Store</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mt-2 mb-6">Karibu Tukutane Kariakoo</h2>
+                    <p class="text-lg text-gray-600 dark-mode:text-gray-300 mb-8">
+                        Mtaa wa Mkunguni, Kariakoo – Dar es Salaam, karibu kabisa na Al Uruba Hotel. Ujionee mwenyewe tofauti ya ubora, huduma na bei.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-4 p-4 neu-card rounded-2xl">
+                            <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Piga Simu</p>
+                                <a href="tel:0657646422" class="text-lg font-bold hover:text-pink-500">065 764 6422</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4 p-4 neu-card rounded-2xl">
+                            <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white text-xl">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500">Tuma WhatsApp</p>
+                                <a href="https://wa.me/255657646422" class="text-lg font-bold hover:text-green-500">+255 657 646 422</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/255657646422" class="bg-gradient-to-r from-green-400 to-emerald-500 text-white px-10 py-4 rounded-full font-bold text-lg btn-glow inline-flex items-center space-x-3">
+                        <i class="fab fa-whatsapp text-2xl"></i> <span>Chat Nasi Sasa</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== PREMIUM FOOTER =================== -->
+    <footer class="bg-[#06080f] text-white pt-20 pb-8 relative overflow-hidden">
+        <div class="orb w-96 h-96 bg-indigo-900 top-0 left-1/2 opacity-30"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <img src="https://z-cdn-media.chatglm.cn/files/9c10819e-a94c-4c69-8c4a-42da879c991b.png?auth_key=1884401220-d151c3a8f6254c2bbee6a4f8b849e827-0-b3d6279c2290847dc62891564e190145" class="h-16 w-auto mb-4 rounded-full" alt="Logo">
+                    <h3 class="font-sora text-xl font-bold mb-2">NICE PRICE</h3>
+                    <p class="text-gray-400 text-sm">Tunawavisha Watoto kwa Ubora, Tunawafurahisha Wazazi kwa Bei. 💙✨</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-pink-500 rounded-full flex items-center justify-center transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-black rounded-full flex items-center justify-center transition"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-blue-600 rounded-full flex items-center justify-center transition"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-yellow-300">Viungo Haraka</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Nyumbani</a></li>
+                        <li><a href="#trending" class="hover:text-white transition">Bidhaa Mpya</a></li>
+                        <li><a href="#sale" class="hover:text-white transition">Flash Sale</a></li>
+                        <li><a href="#location" class="hover:text-white transition">Eneo Letu</a></li>
+                    </ul>
+                </div>
+                <!-- Help -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-yellow-300">Huduma kwa Wateja</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Sera za Kurudisha</a></li>
+                        <li><a href="#" class="hover:text-white transition">Kanuni za Usafirishaji</a></li>
+                        <li><a href="#" class="hover:text-white transition">Maswali ya Mara kwa Mara (FAQ)</a></li>
+                        <li><a href="#" class="hover:text-white transition">Msaada wa Live Chat</a></li>
+                    </ul>
+                </div>
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-yellow-300">Jiunge na Newsletter</h4>
+                    <p class="text-gray-400 text-sm mb-4">Pata taarifa za punguzo na bidhaa mpya kabisa ya wengine.</p>
+                    <form class="flex flex-col space-y-3">
+                        <input type="email" placeholder="Barua pepe yako" class="bg-white/10 border border-white/20 px-4 py-3 rounded-xl focus:outline-none focus:border-pink-500 text-white">
+                        <button class="bg-gradient-to-r from-pink-500 to-purple-600 px-4 py-3 rounded-xl font-bold hover:scale-105 transition">Jiunge Sasa</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2026 NICE PRICE Premium Kids Fashion. Haki zote zimehifadhiwa.</p>
+                <div class="flex space-x-4 text-2xl text-gray-400">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-cc-amazon-pay"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/255657646422" class="fixed bottom-8 right-8 z-50 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-3xl shadow-2xl hover:scale-110 transition-transform duration-300 animate-bounce">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Dark Mode Toggle
+        const darkToggle = document.getElementById('darkToggle');
+        const body = document.body;
+        const icon = darkToggle.querySelector('i');
+
+        darkToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Reveal on Scroll Animation
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        reveals.forEach(reveal => {
+            observer.observe(reveal);
+        });
+
+        // Flash Sale Countdown Timer
+        const days = document.getElementById('days');
+        const hours = document.getElementById('hours');
+        const minutes = document.getElementById('minutes');
+        const seconds = document.getElementById('seconds');
+
+        let countDownDate = new Date().getTime() + (4 * 24 * 60 * 60 * 1000); // 4 days from now
+
+        const x = setInterval(function() {
+            let now = new Date().getTime();
+            let distance = countDownDate - now;
+
+            let d = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let s = Math.floor((distance % (1000 * 60)) / 1000);
+
+            days.innerHTML = d < 10 ? '0' + d : d;
+            hours.innerHTML = h < 10 ? '0' + h : h;
+            minutes.innerHTML = m < 10 ? '0' + m : m;
+            seconds.innerHTML = s < 10 ? '0' + s : s;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("sale").innerHTML = "<h2 class='text-center text-3xl font-bold'>Sale Imeisha!</h2>";
+            }
+        }, 1000);
+
+        // 3D Tilt Effect on Product Cards (Micro-interaction)
+        const cards = document.querySelectorAll('.product-card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
